@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUESTIONS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #output {
+        font-size: 24px;
+    }
+    
+    #questionDisplay {
+        font-size: 36px; /* Adjust the font size as per your preference */
+    }
+</style>
+
+</head>
+<body>
+    
+    <div id="questionDisplay"></div>
+    <br><br>
+    <button onClick="newQuestion()">NEXT QUESTION</button>
+    <br><br>
+ 
+    <script src="javascript.js"></script>
+    <script>
+    var questions = [
+       
+
+
+"PET PEEVES?",
+"MORNING PERSON OR NIGHT PERSON?",
+"EWAN MACGREGOR, NICE, COLLYWABBLES",
+"RESET INSTAGRAM PREFERENCES",
+"COMPLIMENT",
+"TRASH BAG ON WALKS",
+"PERSONAL MAID OR PERSONAL CHEF?",
+"TRAVEL PLANS?", 
+    
+
+
+           
+        
+     
+    ];
+
+    function newQuestion() {
+        var randomNumber = Math.floor(Math.random() * (questions.length));
+        document.getElementById('questionDisplay').innerHTML = questions[randomNumber];
+    }
+
+    // Call newQuestion() on page load
+    window.onload = newQuestion;
+
+    // Add event listener for keyup event
+    document.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            newQuestion();
+        }
+    });
+</script>
+
+
+</body>
+</html>
